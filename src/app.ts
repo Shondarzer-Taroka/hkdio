@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import connectDB from './config/db';
-import router from './routes/productRoutes';
+import productRoutes from './routes/productRoutes';
 import errorHandler from './middlewares/errorHandler';
 
 const app = express()
@@ -11,7 +11,7 @@ app.use(cors())
 connectDB()
 
 // //  routes
-app.use('/api', router)
+app.use('/api', productRoutes)
 
 // // Error Handling Middleware
 app.use(errorHandler);
