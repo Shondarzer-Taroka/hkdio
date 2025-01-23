@@ -1,9 +1,11 @@
-import { Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import { IUser } from "../types/User";
 
 const userSchemaModel = new Schema<IUser>({
-    email: { type: String, required: true, unique: true },
-    isAdmin: { type: Boolean, required: true, default: false },
     name: { type: String, required: true },
-    password: { type: String, required: true }
-}, { timestamps: true })
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+    isAdmin: { type: Boolean, default: false },
+  }, { timestamps: true });
+
+export default mongoose.model<IUser>('User', userSchemaModel)

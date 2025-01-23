@@ -1,7 +1,7 @@
 
 
 export interface IOrder {
-    user: string;
+    user: any;
     orderItems: Array<{
         name: string;
         qty: number;
