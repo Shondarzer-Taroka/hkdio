@@ -1,7 +1,6 @@
 
 
 export interface IOrder {
-
     user: string;
     orderItems: Array<{
         name: string;
@@ -16,7 +15,4 @@ export interface IOrder {
     paidAt?: Date;
     isDelivered: boolean;
     deliveredAt?: Date;
-
-
-
 }
